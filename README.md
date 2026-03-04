@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# Personal Portfolio (Single Page)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Minimal, fast **single-page** personal portfolio built with **React + Vite + TypeScript** and styled with **Tailwind CSS**.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Single-page website**: one route/page composed of sections (Hero, Projects, About, Contact, Footer).
+- **Config-driven content**: core text/links live in `src/config/site.ts`.
+- **No backend**: contact form uses **Netlify Forms**.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS v4 (via `@tailwindcss/vite`)
+- Framer Motion (subtle entrance animations)
+- Netlify Forms
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Dev: `npm run dev`
+- Lint: `npm run lint`
+- Build: `npm run build`
+- Preview: `npm run preview`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    # Personal Portfolio
+## Deploy (Netlify)
 
-    Modern, clean personal portfolio built with:
+- Build command: `npm run build`
+- Publish directory: `dist`
+- SPA redirect: `public/_redirects`
 
-    - React + Vite + TypeScript
-    - Tailwind CSS (Tailwind v4 + Vite plugin)
-    - Framer Motion (subtle animations)
-    - Netlify Forms (contact form, no backend)
+## Netlify Forms (Important)
 
-    ## Getting started
+- Visible form: `src/sections/ContactSection.tsx`
+- Hidden detection form: `index.html`
 
-    ```bash
-    npm install
-    npm run dev
-    ```
-
-    ## Build
-
-    ```bash
-    npm run build
-    npm run preview
-    ```
-
-    ## Deploy (Netlify)
-
-    - Build command: `npm run build`
-    - Publish directory: `dist`
-    - SPA redirect: `public/_redirects`
-
-    Netlify Forms:
-    - `index.html` contains a hidden copy of the form so Netlify can detect it at build time.
-    - The visible form is in `src/App.tsx`.
-  globalIgnores(['dist']),
+If you change fields in the visible form, update the hidden form in `index.html` to match (same form name + fields).

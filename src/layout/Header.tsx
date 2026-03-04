@@ -3,19 +3,19 @@ import { site } from '../config/site'
 
 export function Header() {
   return (
-    <header className="border-b border-zinc-200">
+    <header className="sticky top-0 z-20 border-b border-white/10 bg-zinc-950/60 backdrop-blur-xl">
       <Container className="flex items-center justify-between py-4">
-        <a href="#top" className="text-sm font-semibold tracking-tight">
+        <a href="#top" className="text-sm font-semibold tracking-tight text-zinc-50">
           {site.name}
         </a>
-        <nav className="flex items-center gap-4 text-sm text-zinc-700">
-          <a className="hover:text-zinc-900" href="#projects">
+        <nav className="flex items-center gap-4 text-sm text-zinc-300">
+          <a className="hover:text-white" href="#projects">
             Projects
           </a>
-          <a className="hover:text-zinc-900" href="#about">
+          <a className="hover:text-white" href="#about">
             About
           </a>
-          <a className="hover:text-zinc-900" href="#contact">
+          <a className="hover:text-white" href="#contact">
             Contact
           </a>
         </nav>

@@ -7,6 +7,7 @@ You are working in a **personal portfolio** codebase built with **React + Vite +
 - Keep the site **minimal, fast, and readable**.
 - Prefer **small, composable components** over abstractions.
 - Make changes that fit the existing layout and styling.
+- This portfolio is a **single-page website**: keep changes aligned with a one-page, section-based layout (avoid adding routing unless explicitly requested).
 
 ## Tech stack
 
@@ -24,7 +25,7 @@ You are working in a **personal portfolio** codebase built with **React + Vite +
 
 ## Project structure (important)
 
-- `src/app/App.tsx`: app composition (page layout and section ordering)
+- `src/app/App.tsx`: app composition (single-page layout and section ordering)
 - `src/config/site.ts`: site content/config (name, tagline, social links)
 - `src/layout/`: layout building blocks (e.g. header)
 - `src/sections/`: page sections (Hero/Projects/About/Contact/Footer)

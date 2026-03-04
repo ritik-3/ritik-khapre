@@ -10,14 +10,14 @@ export function FooterSection({
   linkedinHref,
 }: FooterSectionProps) {
   return (
-    <footer className="mt-16 border-t border-zinc-200 py-8 text-sm text-zinc-600">
+    <footer className="mt-12 border-t border-white/10 py-8 text-sm text-zinc-400">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} {name}</p>
         <div className="flex gap-4">
-          <a className="hover:text-zinc-900" href={githubHref}>
+          <a className="hover:text-white" href={githubHref}>
             GitHub
           </a>
-          <a className="hover:text-zinc-900" href={linkedinHref}>
+          <a className="hover:text-white" href={linkedinHref}>
             LinkedIn
           </a>
         </div>
