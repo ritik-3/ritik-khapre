@@ -2,7 +2,7 @@ import { AnimatePresence } from 'framer-motion'
 import { useCallback, useState } from 'react'
 import { Container } from '../components/Container'
 import { LoadingScreen } from '../components/LoadingScreen'
-import { Header } from '../layout/Header'
+import { NavbarSection } from '../sections/NavbarSection'
 import { site } from '../config/site'
 import { AboutSection } from '../sections/AboutSection'
 import { ContactSection } from '../sections/ContactSection'
@@ -18,22 +18,24 @@ export default function App() {
   }, [])
 
   return (
-    <div className="min-h-dvh bg-zinc-950 text-zinc-50">
+    <div className="min-h-dvh bg-black text-zinc-50">
       <AnimatePresence>
         {isLoading ? (
           <LoadingScreen onLoadingComplete={handleLoadingComplete} />
         ) : null}
       </AnimatePresence>
 
-      <Header />
+      <NavbarSection />
 
-      <main id="top" className="py-10 sm:py-12">
-        <Container>
-          <HeroSection
-            stackLine={site.stackLine}
-            tagline={site.tagline}
-            bio={site.copy.heroBio}
-          />
+      <main id="top" className="pb-10 sm:pb-12">
+        <HeroSection
+          stackLine={site.stackLine}
+          tagline={site.tagline}
+          bio={site.copy.heroBio}
+          isLoaded={!isLoading}
+        />
+
+        <Container className="pt-10 sm:pt-12">
           <ProjectsSection />
           <AboutSection />
           <ContactSection />
