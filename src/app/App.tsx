@@ -25,7 +25,7 @@ export default function App() {
         ) : null}
       </AnimatePresence>
 
-      <NavbarSection />
+      <NavbarSection isLoaded={!isLoading} />
 
       <main id="top" className="pb-10 sm:pb-12">
         <HeroSection
