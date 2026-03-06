@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 
 type HeroSectionProps = {
   stackLine: string
@@ -7,7 +7,7 @@ type HeroSectionProps = {
   isLoaded?: boolean
 }
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -18,7 +18,7 @@ const containerVariants = {
   },
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.2, 0.65, 0.3, 0.9] } },
 }
@@ -40,7 +40,7 @@ export function HeroSection({ tagline, isLoaded = true }: HeroSectionProps) {
           variants={{
             hidden: { opacity: 0, scale: 0.95, filter: 'blur(10px)' },
             visible: { opacity: 1, scale: 1, filter: 'blur(0px)', transition: { duration: 1.4, ease: [0.2, 0.65, 0.3, 0.9] } }
-          }}
+          } as Variants}
           src="/hero.png"
           alt="Ritik Khapre"
           loading="eager"

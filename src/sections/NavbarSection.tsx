@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, type Variants, type Transition } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { site } from '../config/site'
 
@@ -20,7 +20,7 @@ export function NavbarSection({ isLoaded = true }: NavbarSectionProps) {
   }, [isLoaded])
 
   // Container fade-in animation
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
@@ -33,7 +33,7 @@ export function NavbarSection({ isLoaded = true }: NavbarSectionProps) {
   }
 
   // THIS is the key: The transition must be applied to the children!
-  const fluidSlideTransition = {
+  const fluidSlideTransition: Transition = {
     duration: 3.0,
     ease: [0.22, 1, 0.36, 1] // Very smooth, liquid-like ease out
   }
